@@ -1,0 +1,136 @@
+.cta {
+  padding-top: 52px;
+  padding-bottom: 70px;
+
+  @include mediaTablet {
+    padding-top: 26px;
+    padding-bottom: 35px;
+  }
+}
+.cta__plate {
+  position: relative;
+  background: #433e89;
+  border-radius: 10px;
+  color: $white;
+  text-align: center;
+  padding: 70px 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -31px;
+    right: 16px;
+    width: 208px;
+    height: 104px;
+    background-image: url(./../img/cta/bottom-right.svg);
+    @include mediaMobile {
+      transform: scale(0.8);
+      bottom: -41px;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -100px;
+    width: 208px;
+    height: 208px;
+    background-image: url(./../img/cta/top-left.svg);
+    background-repeat: no-repeat;
+    @include mediaMobile {
+      transform: scale(0.8);
+      top: 0px;
+    }
+  }
+
+  @include mediaTablet {
+    padding: 50px 15px;
+  }
+  @include mediaMobile {
+    padding: 30px 15px;
+  }
+}
+.cta__plate-title {
+  font-weight: 500;
+}
+.cta__plate-subtitle {
+  margin: 0 auto;
+  max-width: 635px;
+  margin-top: 15px;
+  margin-bottom: 70px;
+
+  @include mediaTablet {
+    font-size: 14px;
+    max-width: 500px;
+    margin-bottom: 35px;
+  }
+  @include mediaMobile {
+    margin-bottom: 20px;
+  }
+}
+
+.cta__plate-form {
+  padding: 7px 7px 7px 30px;
+  max-width: 743px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  background-color: $white;
+  border-radius: 10px;
+
+  input {
+    flex-grow: 1;
+    color: $black;
+    padding: 15px 15px 15px 0;
+  }
+  button {
+    padding: 16px 40px;
+  }
+
+  @include mediaTablet {
+    input {
+      padding: 10px 10px 10px 0;
+    }
+    button {
+      padding: 10px 30px;
+    }
+  }
+  @include mediaMobile {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    background-color: unset;
+    padding: 10px;
+
+    input {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
+}
+
+.cta-alert {
+  position: absolute;
+  z-index: 0;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  cursor: default;
+  transition: opacity 1s ease-in;
+  width: 100%;
+
+  @include mediaTablet {
+    bottom: 12px;
+  }
+  @include mediaSmallMobile {
+    font-size: 12px;
+  }
+}
+.cta-alert--active {
+  transition: opacity 1s ease-in;
+  opacity: 0.7 !important;
+}

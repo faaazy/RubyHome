@@ -1,0 +1,23 @@
+// Base
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/mixins";
+@import "./base/base";
+
+// Blocks
+@import "./blocks/btn";
+@import "./blocks/modal__form";
+@import "./blocks/header";
+@import "./blocks/find";
+@import "./blocks/find__plate";
+@import "./blocks/select-menu";
+@import "./blocks/partners";
+@import "./blocks/properties";
+@import "./blocks/props__card";
+@import "./blocks/benefits";
+@import "./blocks/customers";
+@import "./blocks/customers__slider";
+@import "./blocks/cta";
+@import "./blocks/footer";
+@import "./blocks/footer__row-item";
+@import "./blocks/header-icon";

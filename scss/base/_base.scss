@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Poppins:wght@400;500;600&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $font-main;
+  color: $black;
+  font-size: 16px;
+}
+
+a {
+  color: $black;
+
+  transition: color 0.2s ease-in, font-weight 0.1s ease-in;
+  &:hover {
+    color: $accent;
+    font-weight: 600;
+  }
+}
+.active-link {
+  font-weight: 600;
+  opacity: 1 !important;
+  color: $accent;
+}
+li {
+  transition: opacity 0.2s ease-in;
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1180px;
+}
+
+.none {
+  display: none !important;
+}
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.title {
+  font-size: 44px;
+  font-weight: 600;
+
+  @include mediaTablet {
+    font-size: 35px;
+  }
+  @include mediaMobile {
+    font-size: 25px;
+  }
+}
+.title-2 {
+  font-size: 22px;
+  font-weight: 600;
+
+  @include mediaTablet {
+    font-size: 18px;
+  }
+  @include mediaMobile {
+    font-size: 14px;
+  }
+}
+.subtitle {
+  opacity: 0.7;
+}
+.modal {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+.favorite-active {
+  fill: #e61e14 !important;
+}
+.active-plate {
+  display: flex !important;
+}

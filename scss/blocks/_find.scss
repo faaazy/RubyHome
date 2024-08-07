@@ -1,0 +1,61 @@
+.find {
+  padding-top: 35px;
+  padding-bottom: 50px;
+
+  @include mediaTablet {
+    padding-top: 10px;
+  }
+}
+.find__row {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 34px;
+  position: relative;
+  @include mediaMobile {
+    column-gap: 20px;
+
+    .find__row-right {
+      max-width: 300px;
+    }
+  }
+  @include mediaFind {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 80px;
+  }
+}
+.find__row-text {
+  max-width: 558px;
+  @include mediaMobile {
+    max-width: 400px;
+  }
+}
+.find__title {
+  font-weight: 600;
+  font-size: 61px;
+  line-height: 120%;
+
+  @include mediaTablet {
+    font-size: 45px;
+  }
+  @include mediaMobile {
+    font-size: 30px;
+  }
+}
+.find__subtitle {
+  margin-top: 30px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #030a1b;
+
+  @include mediaTablet {
+    font-size: 14px;
+  }
+  @include mediaMobile {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+}

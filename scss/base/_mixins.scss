@@ -1,0 +1,30 @@
+@mixin titleIcon {
+  position: absolute;
+  width: 50px;
+  height: 64px;
+  background-image: url(./../img/icons/title__big-icon.svg);
+  @content;
+}
+
+@mixin mediaTablet {
+  @media screen and (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin mediaMobile {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin mediaFind {
+  @media screen and (max-width: $find-media) {
+    @content;
+  }
+}
+
+@mixin mediaSmallMobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}

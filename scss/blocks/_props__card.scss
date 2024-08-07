@@ -1,0 +1,94 @@
+.props__card {
+  max-width: 362px;
+
+  box-shadow: 0 8px 70px 0 rgba(0, 0, 0, 0.07);
+  background-color: #fff;
+
+  @include mediaTablet {
+    max-width: 290px;
+  }
+}
+.props__card-body {
+  padding: 30px;
+
+  @include mediaTablet {
+    padding: 20px;
+  }
+}
+.props__card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+
+  h3 {
+    font-weight: 600;
+  }
+
+  @include mediaTablet {
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
+.props__card-heading__img {
+  cursor: pointer;
+  fill: #bbbbbb;
+
+  transition: fill 0.2s ease-in;
+  &:hover {
+    fill: #c9aaaa;
+  }
+}
+.props__card-location {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  opacity: 0.7;
+
+  @include mediaTablet {
+    font-size: 14px;
+  }
+}
+.props__card-rooms {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.props__card-rooms__item {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  img {
+    opacity: 0.7;
+  }
+  span {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+}
+.props__card-bottom {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    font-weight: 600;
+    color: $accent;
+
+    @include mediaTablet {
+      font-size: 20px;
+    }
+  }
+  button {
+    padding: 10px 20px;
+
+    @include mediaTablet {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.modal__form {
+  row-gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 45px;
+  border-radius: 10px;
+
+  input {
+    border: 1px solid $black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background: $white;
+    transition: box-shadow 0.2s ease-in;
+    &:focus {
+      box-shadow: 0 2px 10px $btn-color;
+    }
+  }
+  button {
+    padding: 10px 0;
+  }
+  textarea {
+    resize: none;
+    background-color: $white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    height: 100px;
+
+    transition: box-shadow 0.2s ease-in;
+    &:focus {
+      outline: none;
+      box-shadow: 0 2px 10px $btn-color;
+    }
+  }
+}
+.modal__form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

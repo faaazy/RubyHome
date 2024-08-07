@@ -1,0 +1,87 @@
+.find__plate {
+  position: absolute;
+  z-index: 9;
+  display: inline-block;
+  margin-top: 40px;
+
+  @include mediaTablet {
+    margin-top: 20px;
+  }
+  @include mediaFind {
+    transform: translateX(-50%);
+  }
+}
+.find__plate-top {
+  padding: 15px 30px;
+  background-color: $white;
+  max-width: 250px;
+  border-radius: 5px 5px 0 0px;
+
+  display: inline-block;
+
+  ul {
+    display: flex;
+    column-gap: 44px;
+    @include mediaFind {
+      column-gap: 25px;
+    }
+  }
+  li {
+    font-weight: 500;
+    opacity: 0.7;
+  }
+  li:has(.active-link) {
+    opacity: 1;
+  }
+  @include mediaMobile {
+    padding: 10px 15px;
+  }
+  @include mediaFind {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+@include mediaMobile {
+  .find__plate-line {
+    display: none;
+  }
+}
+.find__plate-main {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  background-color: $white;
+  box-shadow: 0 10px 150px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0 5px 5px 5px;
+
+  @include mediaTablet {
+    padding: 20px;
+    column-gap: 35px;
+  }
+  @include mediaMobile {
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+  }
+  @include mediaFind {
+    padding: 5px 15px 15px 15px;
+    row-gap: 10px;
+  }
+}
+
+.find__plate-search {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  border-radius: 10px;
+  @include mediaTablet {
+    padding: 10px 15px;
+  }
+  @include mediaFind {
+    font-size: 14px;
+    padding: 7px 12px;
+  }
+}

@@ -1,0 +1,62 @@
+.props {
+  padding-top: 70px;
+  padding-bottom: 140px;
+
+  @include mediaTablet {
+    padding-bottom: 70px;
+    padding-top: 35px;
+  }
+  @include mediaMobile {
+    padding-bottom: 45px;
+    padding-top: 15px;
+  }
+}
+
+.props__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.props__title-wrapper {
+  h2 {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -15px;
+      width: 41px;
+      height: 52px;
+      background-image: url(./../img/icons/prop__title-icon.svg);
+
+      @include mediaMobile {
+        transform: scale(0.7);
+        left: -20px;
+        top: -10px;
+      }
+    }
+  }
+}
+.props__heading-link {
+  a {
+    color: $accent;
+    font-weight: 600;
+    &:hover {
+      color: #ce6135;
+    }
+  }
+}
+
+.props__cards {
+  margin-top: 70px;
+  @include mediaMobile {
+    margin-top: 35px;
+  }
+}
+.props__cards-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
