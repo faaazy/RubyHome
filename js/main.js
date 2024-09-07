@@ -1,5 +1,4 @@
 // Modal
-
 const modalBtn = document.querySelector(".header__btn");
 const modalForm = document.querySelector(".modal__form-wrapper");
 const modalFormBtn = document.querySelector(".modal__form-btn");
@@ -16,97 +15,62 @@ function modalMenu(event) {
 }
 
 // Plate switches
-
 const plateTopLinks = document.querySelectorAll(".find__plate-top__link");
-const plateTopList = document.querySelector(".find__plate-top__list");
+const plateTop = document.querySelector(".find__plate-top");
 const plateMain = document.querySelector(".find__plate-main");
 const plateActive = document.querySelector("active-plate");
+const findPlate = document.querySelector(".find__plate");
 
-plateTopList.addEventListener("click", (event) => {
-  plateTopLinks.forEach((plateTopLink) => {
-    if (event.target === plateTopLink) {
-      plateMain.classList.toggle("active-plate");
+document.addEventListener("click", (event) => {
+  const isClickedInsidePlateMain = event.target.closest(".find__plate-main");
+
+  if (!isClickedInsidePlateMain) {
+    plateTopLinks.forEach((item) => item.classList.remove("active-link"));
+  }
+
+  for (const link of plateTopLinks) {
+    if (event.target === link) {
+      link.classList.add("active-link");
+      plateMain.classList.add("active-plate");
+      break;
     }
-    if (plateTopLink.contains(event.target)) {
-      plateTopLink.classList.add("active-link");
+    if (isClickedInsidePlateMain) {
+      plateMain.classList.add("active-plate");
     } else {
-      plateTopLink.classList.remove("active-link");
+      plateMain.classList.remove("active-plate");
+    }
+  }
+});
+
+// Dropdowns
+function setupDropDown(menuSelector, btnSelector, optionsSelector, titleSelector) {
+  const menu = document.querySelector(menuSelector);
+  const btn = document.querySelector(btnSelector);
+  const options = document.querySelectorAll(optionsSelector);
+  const title = document.querySelector(titleSelector);
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      let selectedOption = option.querySelector(".option-text").innerText;
+      title.innerText = selectedOption;
+      menu.classList.remove("active");
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target === btn || btn.contains(event.target)) {
+      menu.classList.toggle("active");
+    } else {
+      menu.classList.remove("active");
     }
   });
-});
-// Dropdowns
-
-const locationMenu = document.querySelector(".location-menu"),
-  locationBtn = locationMenu.querySelector(".location-btn"),
-  locationOptions = locationMenu.querySelectorAll(".location-option"),
-  locationTitle = document.querySelector(".location-title");
-
-document.addEventListener("click", outsideLocationMenu);
-
-function outsideLocationMenu(event) {
-  if (event.target === locationBtn || locationBtn.contains(event.target)) {
-    locationMenu.classList.toggle("active");
-
-    locationOptions.forEach((locationOption) => {
-      locationOption.addEventListener("click", () => {
-        let selectedOption = locationOption.querySelector(".option-text").innerText;
-        locationTitle.innerText = selectedOption;
-        locationMenu.classList.remove("active");
-      });
-    });
-  } else {
-    locationMenu.classList.remove("active");
-  }
 }
 
-const propMenu = document.querySelector(".prop-menu"),
-  propBtn = propMenu.querySelector(".prop-btn"),
-  propOptions = propMenu.querySelectorAll(".prop-option"),
-  propTitle = document.querySelector(".prop-title");
-
-document.addEventListener("click", outsidePropMenu);
-
-function outsidePropMenu(event) {
-  if (event.target === propBtn || propBtn.contains(event.target)) {
-    propMenu.classList.toggle("active");
-
-    propOptions.forEach((propOption) => {
-      propOption.addEventListener("click", () => {
-        let selectedOption = propOption.querySelector(".option-text").innerText;
-        propTitle.innerText = selectedOption;
-        propMenu.classList.remove("active");
-      });
-    });
-  } else {
-    propMenu.classList.remove("active");
-  }
-}
-
-const priceMenu = document.querySelector(".price-menu"),
-  priceBtn = priceMenu.querySelector(".price-btn"),
-  priceOptions = priceMenu.querySelectorAll(".price-option"),
-  priceTitle = document.querySelector(".price-title");
-
-document.addEventListener("click", outsidePriceMenu);
-
-function outsidePriceMenu(event) {
-  if (event.target === priceBtn || priceBtn.contains(event.target)) {
-    priceMenu.classList.toggle("active");
-
-    priceOptions.forEach((priceOption) => {
-      priceOption.addEventListener("click", () => {
-        let selectedOption = priceOption.querySelector(".option-text").innerText;
-        priceTitle.innerText = selectedOption;
-        priceMenu.classList.remove("active");
-      });
-    });
-  } else {
-    priceMenu.classList.remove("active");
-  }
-}
+setupDropDown(".location-menu", ".location-btn", ".location-option", ".location-title");
+setupDropDown(".prop-menu", ".prop-btn", ".prop-option", ".prop-title");
+setupDropDown(".price-menu", ".price-btn", ".price-option", ".price-title");
 
 // Favorites
-
 const favorites = document.querySelectorAll(".props__card-heading__img");
 favorites.forEach((favorite) => {
   favorite.addEventListener("click", () => {
@@ -115,7 +79,6 @@ favorites.forEach((favorite) => {
 });
 
 // Swiper
-
 const swiper = new Swiper(".swiper", {
   loop: true,
   slidesPerView: 2,
@@ -137,20 +100,18 @@ const swiper = new Swiper(".swiper", {
 });
 
 // CTA
-
 const ctaBtn = document.querySelector(".cta__plate-form__btn");
 const ctaAlert = document.querySelector(".cta-alert");
 
 ctaBtn.addEventListener("click", () => {
   ctaAlert.classList.add("cta-alert--active");
-  // setTimeout(ctaAlert.classList.remove("cta-alert--active"), 3000);
+
   setTimeout(() => {
     ctaAlert.classList.remove("cta-alert--active");
   }, 3000);
 });
 
 // Media
-
 const navBtn = document.querySelector(".nav-icon-btn");
 const navIcon = document.querySelector(".nav-icon");
 const navIconActive = document.querySelector("nav-icon--active");
@@ -161,3 +122,11 @@ navBtn.onclick = function () {
   nav.classList.toggle("header__row--mobile");
   document.body.classList.toggle("no-scroll");
 };
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".header__row--mobile") && event.target.closest(".header__list-item")) {
+    nav.classList.remove("header__row--mobile");
+    navIcon.classList.remove("nav-icon--active");
+    document.body.classList.remove("no-scroll");
+  }
+});
