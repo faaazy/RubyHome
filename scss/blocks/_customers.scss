@@ -22,7 +22,9 @@
 .customers__title-wrapper {
   text-align: center;
   h2 {
+    display: inline;
     position: relative;
+
     &::after {
       content: "";
       @include titleIcon {
@@ -33,15 +35,6 @@
         transform: scale(0.7);
         top: -20px;
       }
-      @media screen and (max-width: 388px) {
-        left: 70px;
-      }
-      @media screen and (max-width: 350px) {
-        left: 50px;
-      }
-      // @media screen and (max-width: 375px) {
-      //   left: 0px;
-      // }
     }
   }
 }
