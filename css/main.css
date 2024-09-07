@@ -1053,6 +1053,7 @@ li:hover {
   text-align: center;
 }
 .customers__title-wrapper h2 {
+  display: inline;
   position: relative;
 }
 .customers__title-wrapper h2::after {
@@ -1068,16 +1069,6 @@ li:hover {
   .customers__title-wrapper h2::after {
     transform: scale(0.7);
     top: -20px;
-  }
-}
-@media screen and (max-width: 388px) {
-  .customers__title-wrapper h2::after {
-    left: 70px;
-  }
-}
-@media screen and (max-width: 350px) {
-  .customers__title-wrapper h2::after {
-    left: 50px;
   }
 }
 
