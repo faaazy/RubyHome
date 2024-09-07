@@ -78,10 +78,6 @@
   column-gap: 10px;
   border-radius: 10px;
 
-  &:hover {
-    font-weight: 500;
-    color: $white;
-  }
   @include mediaTablet {
     padding: 10px 15px;
   }

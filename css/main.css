@@ -546,10 +546,6 @@ li:hover {
        column-gap: 10px;
   border-radius: 10px;
 }
-.find__plate-search:hover {
-  font-weight: 500;
-  color: #fff;
-}
 @media screen and (max-width: 1000px) {
   .find__plate-search {
     padding: 10px 15px;
